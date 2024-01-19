@@ -23,7 +23,8 @@ class CurrencyTableScreen extends StatelessWidget {
             currencyLine("abcd"),
             currencyLine("defg"),
             currencyLine("hijk"),
-
+            if (4 == 5) currencyLine("djzefjcizejf"),
+            currencyLine("other line after condition"),
           ],
         )
         );
