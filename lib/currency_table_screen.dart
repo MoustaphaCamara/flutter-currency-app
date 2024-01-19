@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+
 
 class CurrencyTableScreen extends StatelessWidget {
   const CurrencyTableScreen({super.key});
@@ -24,6 +26,11 @@ class CurrencyTableScreen extends StatelessWidget {
 
     );
   }
+  Future callToApi() async {
+    final httpPackageUrl = Uri.https('dart.dev', '/f/packages/http.json');
+    final httpPackageInfo = await http.read(httpPackageUrl);
+    return httpPackageInfo;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +42,7 @@ class CurrencyTableScreen extends StatelessWidget {
           children: [
             currencyColumn("Euro", Colors.grey.shade400),
             currencyColumn("USD", Colors.red.shade400),
+            // Text(callToApi().toString()),
           ],
         )
         );
