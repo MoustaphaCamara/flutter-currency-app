@@ -1,14 +1,25 @@
 import 'package:flutter/material.dart';
 
 class CurrencyTableScreen extends StatelessWidget {
-  Widget currencyLine(String index) {
+  const CurrencyTableScreen({super.key});
+
+  Widget currencyLine(String index, Color color) {
     return Expanded(
-        flex:1,
         child: Container(
           width: double.infinity,
-          color: Colors.yellow,
-          child: Text(index),
+          color: color,
+          child: Row(
+            children: [
+              Expanded(
+                  child: Text(index, textAlign: TextAlign.right)
+              ),
+              Expanded(
+                  child: Text(index, textAlign: TextAlign.left)
+              )
+            ]
+          ),
         )
+
     );
   }
 
@@ -18,13 +29,14 @@ class CurrencyTableScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Currencies converter')
       ),
-        body: Row(
+        body: Column(
           children: [
-            currencyLine("abcd"),
-            currencyLine("defg"),
-            currencyLine("hijk"),
-            if (4 == 5) currencyLine("djzefjcizejf"),
-            currencyLine("other line after condition"),
+            currencyLine("1", Colors.grey.shade400),
+            currencyLine("2", Colors.red.shade400),
+            currencyLine("3", Colors.green.shade400),
+            currencyLine("4", Colors.blue.shade400),
+            currencyLine("5", Colors.red.shade400),
+            currencyLine("6", Colors.red.shade400),
           ],
         )
         );
