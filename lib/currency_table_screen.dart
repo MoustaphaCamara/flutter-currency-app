@@ -7,19 +7,32 @@ class CurrencyTableScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Currencies converter')
       ),
-        body: Column(
+        body: Row(
           children: [
             Expanded(
               flex:1,
               child: Container(
                 width: double.infinity,
-                color: Colors.red,
-                child: Text("dzhofhzeufo"),
+                color: Colors.yellow,
+                child: Text("12345 €"),
               )
             ),
-            const Text("hi", style: TextStyle(fontSize: 18, color: Colors.blue)),
-            const Text("second textferznof", style: TextStyle(fontSize: 18, color: Colors.blue)),
-            const Text("second"),
+            Expanded(
+              flex:1,
+              child: Container(
+                width: double.infinity,
+                color: Colors.grey.shade400,
+                child: Text("12345 \$"),
+              ),
+            ),
+            Expanded(
+              flex:1,
+              child: Container(
+                width: double.infinity,
+                color: Colors.grey.shade400,
+                child: Text("789 \$"),
+              ),
+            ),
           ],
         )
         );
